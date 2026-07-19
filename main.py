@@ -13,3 +13,9 @@ def root():
 def get_time():
     now = datetime.now(timezone.utc)
     return {"server_time": now.isoformat()}
+
+
+@app.get("/date")
+def get_date():
+    now = datetime.now(timezone.utc)
+    return {"server_date": now.date().isoformat()}
